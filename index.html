@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarLint — Grammarly for Web Design</title>
+  <meta name="description" content="A bookmarklet that audits any webpage for spacing issues, contrast failures, and accessibility problems. Drag. Click. Fix." />
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/script.js"></script>
+  <link rel="modulepreload" crossorigin href="/ui.js">
+  <link rel="modulepreload" crossorigin href="/theme.js">
+  <link rel="modulepreload" crossorigin href="/lint.js">
+  <link rel="stylesheet" crossorigin href="/style.css">
+</head>
+<body>
+
+  <div class="star-pattern" aria-hidden="true" id="star-pattern"></div>
+
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">✦ StarLint</a>
+
+    <div class="nav-links">
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="#features"     class="nav-link">Features</a>
+      <a href="#" class="nav-link" id="nav-try-it">Try it</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="theme-icon" class="icon-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="nav-right-mobile">
+      <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+        <svg id="theme-icon-mobile" class="icon-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#how-it-works" class="mob-link">How it works</a>
+    <a href="#features"     class="mob-link">Features</a>
+    <a href="#try-it"       class="mob-link">Try it</a>
+  </div>
+  <section class="hero">
+    <div class="badge-pill">✦ Grammarly for Web Design ✦</div>
+
+    <h1 class="hero-title">
+      Star<span class="accent">Lint</span>
+    </h1>
+
+    <p class="hero-sub">
+      Refine your interface with precision. StarLint identifies layout inconsistencies and accessibility gaps to keep your digital experiences pixel-perfect.
+    </p>
+
+    <div class="bookmarklet-zone">
+      <p class="drag-hint">✦ Drag me to your bookmarks bar ✦</p>
+
+      <a id="bookmarklet-link" class="bookmarklet-btn" href="#" draggable="true" title="Drag me to your bookmarks bar!">
+        <span class="btn-star" aria-hidden="true">★</span>
+        <span class="btn-text">StarLint</span>
+        <span class="btn-star" aria-hidden="true">★</span>
+      </a>
+
+      <button class="copy-btn" id="copy-btn" type="button">Copy code instead</button>
+    </div>
+  </section>
+  <section class="section" id="how-it-works">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Drag the bookmarklet</h3>
+        <p class="step-desc">Drag the big star button above to your browser's bookmarks bar. No install, no extension, no sign‑up.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Visit any website</h3>
+        <p class="step-desc">Go to any site you want to audit — your own project, a client's site, anything on the web.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Click to audit</h3>
+        <p class="step-desc">Click the bookmarklet and watch the panel pop up with your full design audit in seconds.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="features">
+    <h2 class="section-title">What it checks</h2>
+    <div class="features-grid">
+
+      <div class="feature-card" style="--accent-clr: #ff6b9d">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 8h20v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8z"/>
+            <line x1="6"  y1="8"  x2="6"  y2="12"/>
+            <line x1="10" y1="8"  x2="10" y2="14"/>
+            <line x1="14" y1="8"  x2="14" y2="12"/>
+            <line x1="18" y1="8"  x2="18" y2="14"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Spacing Snapper</h3>
+        <p class="feature-desc">Flags every element where margin or padding isn't a multiple of 8 px — the industry‑standard grid. Highlights them in red so you can't miss them.</p>
+      </div>
+
+      <div class="feature-card" style="--accent-clr: #c44dff">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Contrast Guardian</h3>
+        <p class="feature-desc">Uses the WCAG luminance formula <em>L = 0.2126R + 0.7152G + 0.0722B</em> to check if text is readable. Flags anything below a 4.5 : 1 ratio.</p>
+      </div>
+
+      <div class="feature-card" style="--accent-clr: #4ecdc4">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Ghost Layout Mode</h3>
+        <p class="feature-desc">Toggles a pink 1 px outline on every element so you can spot nesting problems, overlapping boxes, and sneaky layout bugs instantly.</p>
+      </div>
+
+      <div class="feature-card" style="--accent-clr: #ffd166">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="4" r="2"/>
+            <path d="M19 13l-7-2-7 2"/>
+            <path d="M12 11v5l-3 4"/>
+            <path d="M12 16l3 4"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Accessibility Check</h3>
+        <p class="feature-desc">Finds images missing <code>alt</code> text and form inputs without labels — the most common accessibility mistakes on the web.</p>
+      </div>
+
+      <div class="feature-card" style="--accent-clr: #74c0fc">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <rect x="8" y="2" width="8" height="4" rx="1"/>
+            <line x1="9" y1="12" x2="15" y2="12"/>
+            <line x1="9" y1="16" x2="13" y2="16"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Live Report Panel</h3>
+        <p class="feature-desc">A real‑time summary panel pops up directly on the page: spacing issues, contrast fails, and accessibility gaps — all counted and listed.</p>
+      </div>
+
+      <div class="feature-card" style="--accent-clr: #ff9fc6">
+        <div class="feature-emoji">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Export Report</h3>
+        <p class="feature-desc">Exports the full audit as a JSON file <em>and</em> opens a notepad view — so everyone can read the errors, not just devs.</p>
+      </div>
+
+    </div>
+  </section>
+ <footer class="site-footer">
+  <div class="footer-left">
+    <p class="footer-q">Got any questions? Ask at 
+      <a href="https://alterspring.org/@yaraysenaz" target="_blank" class="footer-alter-link" aria-label="Alterspring Profile">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 280 280" class="alter-icon">
+  <path d="M0 0 C9.47724929 7.30481392 17.21057731 16.4905112 21 28 C21 28.99 21 29.98 21 31 C22.30710938 30.94779297 22.30710938 30.94779297 23.640625 30.89453125 C38.62667931 30.55393911 52.75560852 33.70451355 63.9375 44.3125 C67.82424889 48.50850197 70.66480811 52.78931693 73 58 C73.31839844 58.66128906 73.63679687 59.32257813 73.96484375 60.00390625 C77.52241631 68.64372533 77.35308759 79.91740626 74.5625 88.75 C70.27814328 98.75186094 63.58961189 106.85303317 54 112 C52.329375 112.928125 52.329375 112.928125 50.625 113.875 C48 115 48 115 45 115 C44.01 111.04 44.01 111.04 43 107 C43.64066406 106.70867187 44.28132812 106.41734375 44.94140625 106.1171875 C56.11100285 100.82369761 61.19990791 95.56532255 66 84 C69.05087809 74.19626369 66.49752071 64.92402793 62 56 C59.55795014 52.54294176 57.17856574 50.15676326 53.625 47.875 C52.53058594 47.15957031 52.53058594 47.15957031 51.4140625 46.4296875 C39.94918172 39.63980665 27.96058603 39.38265874 15 41 C14.70867187 40.03320312 14.41734375 39.06640625 14.1171875 38.0703125 C9.11774413 21.98262563 2.22196746 11.43383015 -12.546875 2.734375 C-24.90956153 -3.47493814 -39.97670104 -3.82995427 -53.15625 -0.0390625 C-66.62065004 4.88062213 -74.96736331 12.71158961 -82 25 C-82.598125 26.03125 -83.19625 27.0625 -83.8125 28.125 C-85.40711425 31.98564503 -86.22655042 35.90526691 -87 40 C-89.90415367 40.84565866 -92.36235793 41.08099899 -95.37890625 40.95703125 C-108.56960221 40.57469224 -119.58137463 41.19330114 -129.7734375 50.64453125 C-136.585085 57.70047834 -139.17241618 65.33009029 -139.5 75.0625 C-139.12010297 85.61903249 -135.62848773 92.28128487 -128.359375 99.87109375 C-125.12325742 102.7911005 -122.06165757 104.50067719 -118 106 C-117.360625 106.29519531 -116.72125 106.59039062 -116.0625 106.89453125 C-107.72063193 110.35451062 -96.711039 110.09335046 -88 108 C-87.8040625 108.78761719 -87.608125 109.57523437 -87.40625 110.38671875 C-83.47364379 124.71021981 -76.3120355 136.60718049 -63.4921875 144.5546875 C-53.9105354 149.63086056 -44.64707301 151.44766377 -33.875 151.6875 C-32.823125 151.72166016 -31.77125 151.75582031 -30.6875 151.79101562 C-28.12510687 151.87254632 -25.56301503 151.94199728 -23 152 C-23.21076172 151.37383789 -23.42152344 150.74767578 -23.63867188 150.10253906 C-25.41626014 144.56273753 -26.55510911 139.57063803 -26.5 133.75 C-26.49427979 133.02619141 -26.48855957 132.30238281 -26.48266602 131.55664062 C-26.12046204 120.42466109 -22.07976261 109.8143084 -14 102 C-6.15647475 96.00540888 1.19163474 94.89002178 11 96 C17.16213606 98.45433584 22.07703446 103.04399908 25 109 C27.72032499 116.20407673 27.77577241 124.14250597 25.12890625 131.3828125 C18.21339465 145.11811928 4.71983558 152.42198604 -9 158 C-2.20283893 165.43439492 6.87729681 170.765524 17 172 C20.00216818 172.07123789 22.99774386 172.05886777 26 172 C25.67 170.783125 25.34 169.56625 25 168.3125 C22.72411995 157.88274754 22.87083807 146.20726447 28.2890625 136.75 C32.0275658 131.47211299 36.75605024 126.08131659 43 124 C55.00557217 123.09026099 55.00557217 123.09026099 60.5625 125.625 C66.39278704 131.30579251 69.91912291 135.92288949 70.375 144.1875 C70.02616494 155.12990511 64.76784669 162.69360955 57 170 C52.35182328 174.06501063 47.77507855 176.83434554 42 179 C45.75943256 183.54264767 50.29523283 185.47780425 56.05078125 186.2890625 C61.02243959 186.50144402 64.59664682 185.16013552 69 183 C70.6642135 182.32723284 72.32986582 181.65793165 74 181 C76.0625 183.3125 76.0625 183.3125 78 186 C76.78995454 189.63013639 75.96377988 189.87693578 72.6875 191.625 C71.90761719 192.05039063 71.12773437 192.47578125 70.32421875 192.9140625 C63.55741135 196.07569688 55.35157086 196.05182997 48.171875 194.31640625 C41.36930371 191.80195889 36.0356729 188.05350934 32 182 C29.11462942 181.69000151 26.39005412 181.5409052 23.5 181.5 C9.82875521 180.9985866 -3.29436836 177.04579159 -13.59765625 167.5234375 C-15.74885904 165.18647626 -17.37633918 162.72775017 -19 160 C-20.03125 160.165 -21.0625 160.33 -22.125 160.5 C-41.4018318 162.80373385 -59.24211757 159.28453224 -74.984375 147.828125 C-83.86318146 140.2407813 -89.89469783 130.89702327 -94 120 C-94 119.34 -94 118.68 -94 118 C-95.00417969 118.04640625 -96.00835937 118.0928125 -97.04296875 118.140625 C-112.46489143 118.63737245 -125.61776252 114.97374946 -137.25 104.375 C-146.57608888 94.57598572 -148.48754487 83.49765413 -148.27734375 70.5625 C-147.8206386 59.4925126 -142.25116349 49.7349594 -134.25 42.25 C-122.52028095 32.65295714 -108.73666365 30.63219415 -94 30 C-93.72027344 29.23816406 -93.44054687 28.47632813 -93.15234375 27.69140625 C-90.34619617 20.46399721 -87.18417538 14.75787688 -82 9 C-81.30777344 8.2265625 -80.61554688 7.453125 -79.90234375 6.65625 C-58.89352074 -15.57530874 -24.60611044 -17.05574231 0 0 Z" 
+    transform="translate(140, 100) scale(0.9)" 
+    fill="currentColor"></path>
+</svg>
+      </a>
+    </p>
+  </div>
+
+  <div class="footer-center">
+    <p class="footer-by">
+      Made with
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="heart-icon">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+      </svg>
+      by
+      <a href="https://github.com/ays3-dev" target="_blank" class="footer-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="github-icon">
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+          <path d="M9 18c-4.51 2-5-2-7-2"></path>
+        </svg>
+      </a>
+    </p>
+    <p class="footer-copy">&copy; <span id="year"></span> StarLint. All rights reserved.</p>
+  </div>
+
+  <div class="footer-right">
+    </div>
+</footer>
+
+</body>
+</html>
