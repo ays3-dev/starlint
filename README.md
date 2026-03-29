@@ -3,7 +3,7 @@
 **Starlint** is a high-performance, vanilla JavaScript utility designed to identify accessibility gaps and UI friction points in modern web interfaces. It specifically targets contrast ratios, interactive element scaling, and visual hierarchy to ensure a seamless experience for all users.
 
 <p align="center">
-  <img src="https://kaplumbagadeden.neocities.org/media/starlint.png" alt="Screenshot of Starlint" width="600"><br>
+  <img src="https://kaplumbagadeden.neocities.org/media/starlint.png1" alt="Screenshot of Starlint" width="600"><br>
   🌐 <a href="https://starlint.netlify.app/"><b>Live Demo</b></a>
 </p>
 
